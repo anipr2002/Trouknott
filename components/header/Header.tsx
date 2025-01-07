@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <motion.div
-      className="fixed z-[99999] w-full bg-[#f4f0ea] box-border p-4 md:p-5"
+      className="fixed top-0 z-[99999] w-full bg-[#f4f0ea] box-border p-4 md:p-5"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{

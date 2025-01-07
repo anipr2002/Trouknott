@@ -2,7 +2,7 @@
 import Description from '@/components/main/Description'
 import Intro from '@/components/main/Intro'
 import Section from '@/components/main/Section'
-import Footer from '@/components/footer/Footer1'
+import Footer from '@/components/footer/Footer2'
 import Preloader from '@/components/preloader/Preloader'
 import Lenis from 'lenis'
 import { useEffect, useState } from 'react'
@@ -32,7 +32,6 @@ export default function Home() {
   return (
     <>
       <main>
-        <Header />
         <AnimatePresence mode='wait'>
           {isLoading && <Preloader />}
         </AnimatePresence>
