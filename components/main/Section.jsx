@@ -17,9 +17,9 @@ export default function Section() {
       className='relative flex items-center justify-center h-screen overflow-hidden'
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className='relative z-10 p-20 mix-blend-difference text-white w-full h-full flex flex-col justify-between'>
-        <p className='w-[50vw] text-[2vw] self-end uppercase mix-blend-difference'>Beauty and quality need the right time to be conceived and realised even in a world that is in too much of a hurry.</p>
-        <p className='text-[5vw] uppercase mix-blend-difference'>Trouknott</p>
+      <div className='relative z-10 md:p-20 px-5 py-10 mix-blend-difference text-white w-full h-full flex flex-col justify-between'>
+        <p className='w-[50vw] md:text-[2vw] text-[2xl] self-end uppercase mix-blend-difference'>Beauty and quality need the right time to be conceived and realised even in a world that is in too much of a hurry.</p>
+        <p className='md:text-[5vw] text-4xl uppercase mix-blend-difference'>Trouknott</p>
       </div>
       <div className='fixed top-[-10vh] left-0 h-[120vh] w-full'>
         <motion.div style={{ y }} className='relative w-full h-full'>

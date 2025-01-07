@@ -39,7 +39,6 @@ export default function Home() {
         <Intro />
         <Description />
         <Section />
-        {/* <div className='h-[50%]'></div> */}
         <Scroll />
         <ImageScroll />
         <Footer />

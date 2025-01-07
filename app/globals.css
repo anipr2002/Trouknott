@@ -76,3 +76,15 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+::selection {
+  background: #808080;
+  color: white;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #808080;
+  color: white;
+  text-shadow: none;
+}
