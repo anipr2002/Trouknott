@@ -73,7 +73,7 @@ export default function Header() {
         animate={isActive ? 'open' : 'closed'}
         className="absolute left-0 top-full w-full h-full bg-black opacity-50"
       ></motion.div>
-      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+      <AnimatePresence mode="wait">{isActive && <Nav onClick={() => setIsActive(false)} />}</AnimatePresence>
     </motion.div>
   );
 }

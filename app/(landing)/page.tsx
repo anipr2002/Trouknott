@@ -8,12 +8,14 @@ import Lenis from 'lenis'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Scroll from '@/components/main/Scroll'
-import Header from '@/components/header/Header'
 import ImageScroll from '@/components/main/ImageScroll'
+import { useStore } from '@/store/store'
 
 export default function Home() {
 
   const [isLoading, setIsLoading] = useState(true)
+  const { isPreload, setIsPreload } = useStore()
+
   useEffect(() => {
     const lenis = new Lenis()
 
@@ -27,13 +29,14 @@ export default function Home() {
     setTimeout(() => {
       setIsLoading(false)
       window.scrollTo(0, 0)
+      setIsPreload()
     }, 2000)
   }, [])
   return (
     <>
       <main>
         <AnimatePresence mode='wait'>
-          {isLoading && <Preloader />}
+          {isLoading && !isPreload && <Preloader />}
         </AnimatePresence>
         <Intro />
         <Description />

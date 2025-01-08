@@ -15,7 +15,9 @@ const links = [
   { title: 'Contact', href: '/contact', src: 'contact.png' },
 ];
 
-export default function Index() {
+export default function Nav({
+  onClick,
+}) {
   const [selectedLink, setSelectedLink] = useState({ isActive: false, index: 0 });
 
   return (
@@ -28,7 +30,7 @@ export default function Index() {
     >
       <div className="flex flex-col gap-12 mb-20 md:mb-0 md:flex-row md:justify-between">
         <div className="flex flex-col justify-between">
-          <BodyNav links={links} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
+          <BodyNav onClick={onClick} links={links} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
           <FooterNav />
         </div>
         <ImageNav src={links[selectedLink.index].src} isActive={selectedLink.isActive} />

@@ -6,9 +6,10 @@ interface BodyProps {
   links: { title: string; href: string }[];
   selectedLink: { isActive: boolean; index: number };
   setSelectedLink: (link: { isActive: boolean; index: number }) => void;
+  onClick: () => void;
 }
 
-export default function BodyNav({ links, selectedLink, setSelectedLink }: BodyProps) {
+export default function BodyNav({ links, selectedLink, setSelectedLink, onClick }: BodyProps) {
   const getChars = (word: string) => {
     return word.split('').map((char, i) => (
       <motion.span
@@ -27,7 +28,9 @@ export default function BodyNav({ links, selectedLink, setSelectedLink }: BodyPr
   return (
     <div className="flex flex-wrap mt-10 md:mt-20">
       {links.map((link, index) => (
-        <Link key={`l_${index}`} href={link.href} className="no-underline uppercase text-black">
+        <Link key={`l_${index}`} href={link.href}
+        onClick={onClick}
+        className="no-underline uppercase text-black">
           <motion.p
             onMouseOver={() => setSelectedLink({ isActive: true, index })}
             onMouseLeave={() => setSelectedLink({ isActive: false, index })}
