@@ -7,6 +7,7 @@ import { opacity, background } from './anim';
 import Nav from './nav/Nav';
 import { Instagram } from 'lucide-react';
 import Image from 'next/image';
+import {MenuButton} from '@/components/ui/menuButton';
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -32,13 +33,10 @@ export default function Header() {
           onClick={() => setIsActive(!isActive)}
           className="flex items-center justify-center gap-2 cursor-pointer"
         >
-          <div
-            className={`relative w-[22.5px] before:block before:h-[1px] before:w-full before:bg-black before:absolute before:top-[-4px] before:transition-all before:duration-1000 before:ease-[cubic-bezier(0.76,0,0.24,1)] after:block after:h-[1px] after:w-full after:bg-black after:absolute after:top-[4px] after:transition-all after:duration-1000 after:ease-[cubic-bezier(0.76,0,0.24,1)] ${
-              isActive
-              ? 'before:rotate-45 before:top-0 after:-rotate-45 after:top-0'
-              : ''
-              }`}
-          ></div>
+          <MenuButton
+            isOpen={isActive}
+            onClick={() => setIsActive(!isActive)}
+            />
           <div className="relative flex items-center">
             <motion.p
               variants={opacity}

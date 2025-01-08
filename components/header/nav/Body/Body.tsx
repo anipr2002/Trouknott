@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Link as TransitionLink } from 'next-transition-router';
 import { blur, translate } from '../../anim';
 
 interface BodyProps {

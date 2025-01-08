@@ -14,7 +14,7 @@ import { useStore } from '@/store/store'
 export default function Home() {
 
   const [isLoading, setIsLoading] = useState(true)
-  const { isPreload, setIsPreload } = useStore()
+  const { isPreload, setIsPreload} = useStore()
 
   useEffect(() => {
     const lenis = new Lenis()
@@ -31,6 +31,7 @@ export default function Home() {
       window.scrollTo(0, 0)
       setIsPreload()
     }, 2000)
+
   }, [])
   return (
     <>

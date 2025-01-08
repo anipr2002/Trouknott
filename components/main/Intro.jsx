@@ -1,8 +1,11 @@
+"use client";
 import React from 'react'
 import Image from 'next/image';
 import Background from '../../public/b.png';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { Reveal } from '@/components/animation/reveal';
+import { Title } from '@/components/animation/title';
 
 export default function Intro() {
   const container = useRef();
@@ -11,13 +14,26 @@ export default function Intro() {
     offset: ['start start', 'end start']
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"])
 
   return (
-    <div className='h-screen overflow-hidden'>
-      <motion.div style={{ y }} className='relative h-full'>
-        <Image src={Background} fill alt="image" style={{ objectFit: "cover" }} />
-      </motion.div>
-    </div>
+    <>
+    <div className="mx-auto flex h-dvh flex-col items-center justify-center px-8 lg:max-w-[75%] lg:px-16">
+        <Title className="relative z-20 mb-8 mt-64 text-center text-[3.75rem] font-normal uppercase leading-[.85] text-[tomato] mix-blend-color-dodge md:text-[8rem] lg:mt-0 lg:text-[12rem]">
+          <div className="overflow-hidden px-2">
+            <span className="block"> TROUKNOTT </span>
+          </div>
+
+        </Title>
+      </div>
+
+      <Reveal className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src={Background}
+          className="h-full w-full scale-[2] object-cover object-bottom"
+          alt=""
+          priority
+        />
+      </Reveal>
+    </>
   )
 }
